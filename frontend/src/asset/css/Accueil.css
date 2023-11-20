@@ -1,0 +1,25 @@
+.info h1 {
+    color:#fff;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    margin-bottom: 10px !important;
+}
+.info p {
+    margin-top: 5px;
+    color: #777;
+    font-size: 15px;
+   word-spacing: 1.5px;
+   font-weight: 300;
+   line-height: 1.5;
+   
+}
+.info p span:first-child {
+    color: #15bc7e;
+    font-weight: 600;
+}
+.swichBtn {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
