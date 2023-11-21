@@ -17,8 +17,8 @@ function NavBar() {
                         <a className="nav-item nav-link ms-5" href="#">Portefeuille</a>
                     </div>
                     <div className="navbar-nav ml-auto">
-                        <a className="nav-item nav-link  nav-conn" href="#">Se connecter</a>
-                        <a className="nav-item nav-link nav-ins" href="#">S'inscrire</a>
+                        <Link className="nav-item nav-link  nav-conn" to="/login">Se connecter</Link>
+                        <Link className="nav-item nav-link nav-ins" to="/register">S'inscrire</Link>
                     </div>
                 </div>
             </nav>
