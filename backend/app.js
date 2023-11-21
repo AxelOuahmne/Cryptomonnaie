@@ -4,8 +4,9 @@ const mongoose = require('mongoose');
 const app = express();
 app.use(express.json());
 
-const stuffRoutes = require('./routes/stuff');
-const userRoutes = require('./routes/user');
+const stuffRoutes  = require('./routes/stuff');
+const userRoutes   = require('./routes/user');
+const ApiRoutes    = require("./routes/apicrypto");
 
 // Connexion à la base de données MongoDB
 mongoose.connect(process.env.MONGODB_URI)
@@ -25,5 +26,6 @@ app.use((req, res, next) => {
 
 app.use('/api/stuff', stuffRoutes);
 app.use('/api/auth', userRoutes);
+app.use("/api/cryptodata", ApiRoutes);
 
 module.exports = app;
