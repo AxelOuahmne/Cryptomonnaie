@@ -144,3 +144,10 @@
     font-size: 40px;
     padding-bottom: 20px;
 }
+table {
+    background-color: transparent !important;
+}
+table tr ,th ,td {
+    background-color: transparent !important;
+    color: #fff !important;
+}
