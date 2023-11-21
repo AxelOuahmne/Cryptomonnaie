@@ -58,36 +58,38 @@ exports.deleteUser = (req, res, next) => {
 };
 
 exports.putUser = (req, res, next) => {
-    const userId = req.params.id; // Assuming your route has a parameter named 'id'
+    const userId = req.params.id;
 
-    // Assuming you want to update the email based on the request body
-    //const updateNickname = req.body.nickname;
+    // Exemple : Récupération du nouveau mot de passe depuis le corps de la requête
+    const newPasswd = req.body.password;
 
-    //Va falloir hasher le mdp
-    const updatePasswd = req.body.password;
+    // Hasher le nouveau mot de passe avant de le stocker
+    bcrypt.hash(newPasswd, 10)
+        .then((hashedPassword) => {
+            // Utilisez le mot de passe haché pour mettre à jour l'utilisateur
+            User.findByIdAndUpdate(
+                userId,
+                { password: hashedPassword },
+                { new: true, runValidators: true }
+            )
+                .then((updatedUser) => {
+                    if (!updatedUser) {
+                        return res.status(404).json({ message: "Utilisateur non trouvé" });
+                    }
 
-    // Use findByIdAndUpdate to find the user by ID and update the email
-    User.findByIdAndUpdate(
-        userId,
-        { password: updatePasswd },
-        { new: true, runValidators: true } // Options to return the updated document and run validators
-    )
-        .then((updatedUser) => {
-            if (!updatedUser) {
-                // If no user found, send a 404 response
-                return res.status(404).json({ message: "User not found" });
-            }
-
-            // Send a success response
-            res
-                .status(200)
-                .json({ message: "User updated successfully", user: updatedUser });
+                    res.status(200).json({ message: "Utilisateur mis à jour avec succès", user: updatedUser });
+                })
+                .catch((error) => {
+                    console.error(error);
+                    res.status(500).json({ message: "Erreur interne du serveur" });
+                });
         })
         .catch((error) => {
             console.error(error);
-            res.status(500).json({ message: "Internal Server Error" });
+            res.status(500).json({ message: "Erreur interne du serveur" });
         });
 };
+
 
 exports.getUser = (req, res, next) => {
     User.findOne({
@@ -104,14 +106,9 @@ exports.getUser = (req, res, next) => {
 };
 
 exports.logout = (req, res) => {
-    // Implementation for logout
-    req.session.destroy((err) => {
-        if (err) {
-            console.error("Error destroying session:", err);
-            return res.status(500).json({ message: "Internal Server Error" });
-        }
+    // Vous pouvez ajouter ici la logique pour ajouter le token à la liste noire,
+    // mais dans le cas de JWT, cela est souvent géré côté client.
 
-        // Send a response indicating successful logout
-        res.status(200).json({ message: "Logout successful" });
-    });
+    // Vous pouvez simplement envoyer une réponse réussie
+    res.status(200).json({ message: 'Déconnexion réussie' });
 };
