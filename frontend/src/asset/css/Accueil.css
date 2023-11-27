@@ -23,6 +23,7 @@
     align-items: start;
     gap: 10px;
 }
+<<<<<<< Updated upstream
 .carousel .carousel-indicators button {
     width: 10px;
    height: 10px;
@@ -151,3 +152,5 @@ table tr ,th ,td {
     background-color: transparent !important;
     color: #fff !important;
 }
+=======
+>>>>>>> Stashed changes
