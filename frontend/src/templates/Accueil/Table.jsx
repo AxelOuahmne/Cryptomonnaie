@@ -8,9 +8,15 @@ function Table() {
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prix</th>
+      <th scope="col">1h %</th>
+      <th scope="col">% 24h</th>
+      <th scope="col">7d % </th>
+      <th scope="col">Cap. Marché</th>
+      <th>Volume (24 h)</th>
+      <th>Offre en Circulation</th>
+      <th>7 Derniers Jours</th>
     </tr>
   </thead>
   <tbody>
