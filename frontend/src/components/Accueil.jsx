@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-<<<<<<< Updated upstream
 import '../asset/css/Accueil.css'
 import img1 from "../asset/img/23930.png";
 // import img2 from "../asset/img/28467.png";
@@ -11,36 +10,27 @@ import C from '../asset/img/c.jpg'
 import Table from '../templates/Accueil/Table';
 
 
-=======
-import 'bootstrap/dist/css/bootstrap.min.css';  // Importer Bootstrap en premier
-import '../asset/css/Accueil.css';
-import slider1 from '../asset/img/slider-1.jpg'
->>>>>>> Stashed changes
 function Accueil() {
     // Use state to track the checked state
     const [isChecked, setIsChecked] = useState(true);
+
+    // Define an onChange handler to update the state when the checkbox is clicked
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
 
-
     return (
         <>
             <div className="container">
-<<<<<<< Updated upstream
                 <div className="row mt-5 mb-5">
                     <div className="col-md-8 info">
-=======
-                <div className="row mt-5 text-center">
-                    <div className="col-md-8 info col-sm-12">
->>>>>>> Stashed changes
                         <h1>Top 100 Crypto-monnaies par capitalisation de marché</h1>
-                        <p className='mt-sm-5'>
+                        <p>
                             La capitalisation boursière globale du marché crypto est de €1.3T,
                             soit une augmentation de <span><i className="fa-solid fa-arrow-up"></i> 1.62%</span> <span>au cours des dernières 24 heures. Lire plus</span>
                         </p>
                     </div>
-                    <div className="col-md-4 swichBtn col-sm-12 mt-sm-2">
+                    <div className="col-md-4 swichBtn">
                         <span>Essentiels</span>
                         <div className="form-check form-switch">
                             {/* Use the state variable and the onChange handler */}
@@ -56,7 +46,6 @@ function Accueil() {
                     </div>
                 </div>
                 <div className="row mt-5">
-<<<<<<< Updated upstream
                     <div className="col-md-4 mb-5">
                         <div id="carouselExampleDark" className="carousel carousel-dark slide">
                             <div className="carousel-indicators">
@@ -141,35 +130,9 @@ function Accueil() {
                                        
                                     </div> */}
                                 </div>
-=======
-                    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                        <ol className="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div className="carousel-inner">
-                            <div className="carousel-item active">
-                                <img className="d-block w-100" src={slider1} alt="First slide" />
-                            </div>
-                            <div className="carousel-item">
-                            <img className="d-block w-100" src={slider1} alt="First slide" />
-                            </div>
-                            <div className="carousel-item">
-                            <img className="d-block w-100" src={slider1} alt="First slide" />
->>>>>>> Stashed changes
                             </div>
                         </div>
-                        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Previous</span>
-                        </a>
-                        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Next</span>
-                        </a>
                     </div>
-<<<<<<< Updated upstream
                     <div className="col-md-4 mb-5">
                         <div id="carouselExampleDark1" className="carousel carousel-dark slide">
                             <div className="carousel-indicators">
@@ -268,13 +231,10 @@ function Accueil() {
                 </div>
                 <div className="row mt-5">
                   <Table />
-=======
-
->>>>>>> Stashed changes
                 </div>
             </div>
         </>
     );
 }
 
-export default Accueil;
+export default Accueil
